@@ -1,0 +1,21 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /
+  undertow:
+    max-http-post-size: -1
+    buffer-size: 512
+    direct-buffers: true
+    threads:
+      io: 2
+      worker: 256
+spring:
+  datasource:
+    dynamic:
+      hikari:
+        max-lifetime: 1800000
+        connection-timeout: 5000
+        idle-timeout: 3600000
+        max-pool-size: 12
+        min-idle: 4
+        connection-test-query: /**ping*/
